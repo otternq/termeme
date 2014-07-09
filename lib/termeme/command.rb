@@ -1,3 +1,5 @@
+require 'termeme/command/help'
+
 module TerMeme
   class Command
     class << self
@@ -19,18 +21,26 @@ module TerMeme
         puts TerMeme::VERSION
       end
 
-      def help
-        output = %{
-          -termeme: help
 
-          termeme --version                    prints the current termeme version
 
-          termeme help                         this help text
-          termeme generate <meme> meme text    generate a meme with only one line of text required
+      def usage(meme=nil)
 
-        }
+        TerMeme::MEME::ALL.each do |memeData|
 
-        puts output.gsub(/^ {8}/, '') # strip the first eight spaces of every line
+          if meme.nil? or memeData[:shortName] == meme
+            puts "termeme generate #{TerMeme::MEME.usage(memeData)}"
+          end
+
+        end
+
+      end
+
+      def list
+
+        TerMeme::MEME::ALL.each do |memeData|
+          puts "#{memeData[:name]} - use: #{memeData[:shortName]}"
+        end
+
       end
 
       def generate(meme, minor)
@@ -49,9 +59,13 @@ module TerMeme
       # Returns output based on method calls.
       def delegate(command, major, minor)
 
-        return help     if command == "help"
-        return version  if command == "--version"
+        return help                   if command == "help" && major.nil?
+        return version                if command == "--version"
+        return list                   if command == "list"
         return generate(major, minor) if command == "generate"
+        return usage                  if command == "usage" && major.nil?
+        return usage(major)           if ["usage", "help"].include?(command)
+        return usage(command)         if ["usage", "help"].include?(major)
 
       end
 
