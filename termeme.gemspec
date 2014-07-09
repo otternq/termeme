@@ -26,12 +26,19 @@ Gem::Specification.new do |s|
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'
   s.require_paths = %w[lib]
 
+  ## If your gem includes any executables, list them here.
+  s.executables = ["termeme"]
+  s.default_executable = 'termeme'
+
   ## Leave this section as-is. It will be automatically generated from the
   ## contents of your Git repository via the gemspec task. DO NOT REMOVE
   ## THE MANIFEST COMMENTS, they are used as delimiters by the task.
   # = MANIFEST =
   s.files = %w[
-
+    Rakefile
+    lib/termeme.rb
+    lib/termeme/meme/yuno.rb
+    termeme.gemspec
   ]
   # = MANIFEST =
 

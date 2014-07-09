@@ -49,6 +49,11 @@ task :build => :gemspec do
   sh "mv #{gem_file} pkg"
 end
 
+desc "Perform a local installation of #{gem_file}"
+task :localinstall => :build do
+  sh "gem install --local pkg/#{gem_file}"
+end
+
 desc "Generate #{gemspec_file}"
 task :gemspec => :validate do
   # read spec file and split out manifest section
