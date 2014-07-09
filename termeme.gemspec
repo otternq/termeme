@@ -41,6 +41,8 @@ Gem::Specification.new do |s|
     lib/termeme.rb
     lib/termeme/command.rb
     lib/termeme/command/help.rb
+    lib/termeme/command/list.rb
+    lib/termeme/command/usage.rb
     lib/termeme/meme.rb
     lib/termeme/meme/yuno.rb
     termeme.gemspec

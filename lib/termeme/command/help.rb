@@ -4,7 +4,7 @@ module TerMeme
 
       def help
         output = %{
-          -termeme: help
+          -termeme: help!
 
           termeme --version                    prints the current termeme version
 
@@ -14,7 +14,7 @@ module TerMeme
 
           termeme usage                        show how to use all the memes
 
-          termeme usage <meme>                 show usage for a specific meme
+          termeme usage <meme>                 show how to use a meme
           termeme help <meme>
           termeme <meme> usage
           termeme <meme> help

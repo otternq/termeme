@@ -16,6 +16,12 @@ module TerMeme
         puts @text
       end
 
+      def self.factory(input)
+        yuno = YUNo.new
+        yuno.setText(input)
+        return yuno
+      end
+
     end
   end
 end

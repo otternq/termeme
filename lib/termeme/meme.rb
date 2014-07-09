@@ -4,6 +4,7 @@ require 'termeme/meme/yuno'
 
 module TerMeme
   module MEME
+
     ALL = [
         TerMeme::MEME::YUNo::DATA
     ]
@@ -27,14 +28,18 @@ module TerMeme
 
     end
 
-    def self.generate(meme, minor)
+    def self.generate(memeName, minor)
 
-      case meme
+      meme = nil
+
+      case memeName
       when 'yuno'
-        yuno = TerMeme::MEME::YUNo.new
-        yuno.setText minor
-        yuno.generate
+        meme = TerMeme::MEME::YUNo.factory(minor)
       end
+
+      abort "Couldn't find meme #{memeName}" if meme.nil?
+
+      meme.generate
 
     end
 
