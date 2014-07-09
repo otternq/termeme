@@ -67,5 +67,5 @@ when your done just send me a pull request
 
 ##Other Stuff
 
-For better or worse, I grabbed a large amount of the scaffolding
-for this from [Boom](http://github.com/holman/boom)
+For better or worse, I grabbed a large amount of scaffolding
+from [Boom](http://github.com/holman/boom)
