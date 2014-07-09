@@ -40,6 +40,7 @@ Gem::Specification.new do |s|
     bin/termeme
     lib/termeme.rb
     lib/termeme/command.rb
+    lib/termeme/command/help.rb
     lib/termeme/meme.rb
     lib/termeme/meme/yuno.rb
     termeme.gemspec

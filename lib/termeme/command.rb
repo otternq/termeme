@@ -1,4 +1,6 @@
 require 'termeme/command/help'
+require 'termeme/command/list'
+require 'termeme/command/usage'
 
 module TerMeme
   class Command
@@ -21,51 +23,18 @@ module TerMeme
         puts TerMeme::VERSION
       end
 
-
-
-      def usage(meme=nil)
-
-        TerMeme::MEME::ALL.each do |memeData|
-
-          if meme.nil? or memeData[:shortName] == meme
-            puts "termeme generate #{TerMeme::MEME.usage(memeData)}"
-          end
-
-        end
-
-      end
-
-      def list
-
-        TerMeme::MEME::ALL.each do |memeData|
-          puts "#{memeData[:name]} - use: #{memeData[:shortName]}"
-        end
-
-      end
-
-      def generate(meme, minor)
-
-      case meme
-      when 'yuno'
-         yuno = TerMeme::MEME::YUNo.new
-         yuno.setText minor
-         yuno.generate
-       end
-
-      end
-
       # Public: allows main access to most commands.
       #
       # Returns output based on method calls.
       def delegate(command, major, minor)
 
-        return help                   if command == "help" && major.nil?
-        return version                if command == "--version"
-        return list                   if command == "list"
-        return generate(major, minor) if command == "generate"
-        return usage                  if command == "usage" && major.nil?
-        return usage(major)           if ["usage", "help"].include?(command)
-        return usage(command)         if ["usage", "help"].include?(major)
+        return help                                 if command == "help" && major.nil?
+        return version                              if command == "--version"
+        return list                                 if command == "list"
+        return TerMeme::MEME.generate(major, minor) if command == "generate"
+        return usage                                if command == "usage" && major.nil?
+        return usage(major)                         if ["usage", "help"].include?(command)
+        return usage(command)                       if ["usage", "help"].include?(major)
 
       end
 

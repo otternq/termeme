@@ -27,5 +27,17 @@ module TerMeme
 
     end
 
+    def self.generate(meme, minor)
+
+      case meme
+      when 'yuno'
+        yuno = TerMeme::MEME::YUNo.new
+        yuno.setText minor
+        yuno.generate
+      end
+
+    end
+
+
   end
 end
