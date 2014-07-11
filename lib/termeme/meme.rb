@@ -34,7 +34,7 @@ module TerMeme
 
       case memeName
       when 'yuno'
-        meme = TerMeme::MEME::YUNo.factory(minor)
+        meme = YUNo.factory(minor)
       end
 
       abort "Couldn't find meme #{memeName}" if meme.nil?

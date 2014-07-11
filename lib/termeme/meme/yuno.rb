@@ -1,6 +1,4 @@
-require 'skeptick'
-
-include Skeptick
+require "termeme/meme/imagegen"
 
 module TerMeme
   module MEME
@@ -18,26 +16,16 @@ module TerMeme
 
       def generate
         puts "Generating #{DATA[:name]} meme!"
-        puts @text
 
-        image_size = '400x120'
-        left, top  = 8, 80
+        meme = MEME.new
 
-        textLocal = @text
+        meme.setTopText("Y U NO")
+        meme.setBottomText(@text)
 
-        # Build a text image that says "Skeptick" using specified font, add gradient
-        text = image do
-          canvas :none, size: '395x110'
-          font   'Arial Bold.ttf'
-          set    :pointsize, 90
-          set    :fill, '#000000'
-          write  "#{textLocal}!", left: left, top: top
-          apply  :blur, '0x0.7'
-        end
+        meme.setTopPosition Position.new(8, 80)
+        meme.setBottomPosition Position.new(8, 320)
 
-        # Create a convert command with all of the above and run it
-        logo = convert(text, to: "logo.png")
-        logo.build
+        meme.create
 
       end
 

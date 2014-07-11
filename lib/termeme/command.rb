@@ -31,7 +31,7 @@ module TerMeme
         return help                                 if command == "help" && major.nil?
         return version                              if command == "--version"
         return list                                 if command == "list"
-        return TerMeme::MEME.generate(major, minor) if command == "generate"
+        return MEME.generate(major, minor) if command == "generate"
         return usage                                if command == "usage" && major.nil?
         return usage(major)                         if ["usage", "help"].include?(command)
         return usage(command)                       if ["usage", "help"].include?(major)

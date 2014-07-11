@@ -7,7 +7,7 @@ module TerMeme
         TerMeme::MEME::ALL.each do |memeData|
 
           if meme.nil? or memeData[:shortName] == meme
-            puts "termeme generate #{TerMeme::MEME.usage(memeData)}"
+            puts "termeme generate #{MEME.usage(memeData)}"
           end
 
         end

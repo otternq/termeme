@@ -35,6 +35,8 @@ Gem::Specification.new do |s|
   ## THE MANIFEST COMMENTS, they are used as delimiters by the task.
   # = MANIFEST =
   s.files = %w[
+    Gemfile
+    Gemfile.lock
     README.md
     Rakefile
     bin/termeme
@@ -45,7 +47,11 @@ Gem::Specification.new do |s|
     lib/termeme/command/usage.rb
     lib/termeme/meme.rb
     lib/termeme/meme/yuno.rb
+    script/systemdeps.rb
     termeme.gemspec
+    test/cli.sh
+    test/run
+    test/yuno.sh
   ]
   # = MANIFEST =
 

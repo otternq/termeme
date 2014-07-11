@@ -5,7 +5,8 @@ Er mer gerd. Memes fer der terminal
 ##Installation
 
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/otternq/termeme/script/systemdeps.rb)"
+brew install imagemagick
+ruby -e "$(curl -fsSL https://raw.github.com/otternq/termeme/master/script/systemdeps.rb)"
 gem install termeme
 ```
 
