@@ -1,4 +1,4 @@
-require "termeme/meme/imagegen"
+require "termeme/meme/meme"
 
 module TerMeme
   module MEME
