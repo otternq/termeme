@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
     lib/termeme/command/list.rb
     lib/termeme/command/usage.rb
     lib/termeme/meme.rb
-    lib/termeme/meme/imagegen.rb
+    lib/termeme/meme/meme.rb
     lib/termeme/meme/yuno.rb
     meme.png
     script/systemdeps.rb
