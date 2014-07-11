@@ -5,4 +5,4 @@ $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 
 require 'termeme'
 
-yuno = TerMeme::Command.execute(*ARGV)
+TerMeme::Command.execute(*ARGV)

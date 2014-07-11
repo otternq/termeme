@@ -2,6 +2,12 @@
 
 Er mer gerd. Memes fer der terminal
 
+##Installation
+
+```
+ruby -e "$(curl -fsSL https://raw.github.com/otternq/termeme/script/systemdeps.rb)"
+gem install termeme
+```
 
 ##From terminal
 
@@ -64,6 +70,19 @@ irb and automatically include lib/termeme.rb so you can test
 your changes.
 
 when your done just send me a pull request
+
+###Testing dependencies
+
+I've added all the dependencies to `rake deps`, but if it doesn't
+agree with your system just install the following
+
+####Roundup
+
+To run some of the tests, [roundup](https://github.com/bmizerany/roundup) is required. Just run:
+
+```
+$ brew install roundup
+```
 
 ##Other Stuff
 

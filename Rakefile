@@ -43,6 +43,17 @@ end
 #
 #############################################################################
 
+desc "Run tests with both roundup and rspec"
+task :test do
+  sh "bash test/run"
+end
+
+desc "Gets all the dependencies"
+task :deps do
+  sh "bundle install"
+  sh "brew install roundup"
+end
+
 desc "Open an irb session preloaded with this library"
 task :console do
   sh "irb -rubygems -r ./lib/#{name}.rb"
@@ -53,6 +64,7 @@ end
 # Packaging tasks
 #
 #############################################################################
+
 desc "Build #{gem_file} into the pkg directory"
 task :build => :gemspec do
   sh "mkdir -p pkg"

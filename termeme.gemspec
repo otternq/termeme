@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
 
   s.name              = 'termeme'
   s.version           = '0.0.1'
-  s.date              = '2014-07-08'
+  s.date              = '2014-07-10'
   s.rubyforge_project = 'termeme'
 
   ## Make sure your summary is short. The description may be as long
