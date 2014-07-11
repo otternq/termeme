@@ -1,25 +1,13 @@
 require 'skeptick'
+require 'termeme/meme/position'
+
+
 include Skeptick
 
 module TerMeme
   module MEME
 
-    class Position
 
-      def initialize(left, top)
-        @top = top
-        @left = left
-      end
-
-      def getTop
-        @top
-      end
-
-      def getLeft
-        @left
-      end
-
-    end
 
     class MEME
 
