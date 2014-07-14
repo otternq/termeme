@@ -50,8 +50,10 @@ end
 
 desc "Gets all the dependencies"
 task :deps do
-  sh "bundle install"
+  sh 'brew install imagemagick'
+  sh 'ruby -e "$(curl -fsSL https://raw.github.com/otternq/termeme/master/script/systemdeps.rb)'
   sh "brew install roundup"
+  sh "bundle install"
 end
 
 desc "Open an irb session preloaded with this library"

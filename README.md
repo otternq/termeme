@@ -75,7 +75,8 @@ when your done just send me a pull request
 ###Testing dependencies
 
 I've added all the dependencies to `rake deps`, but if it doesn't
-agree with your system just install the following
+agree with your system just install the following as well as the
+dependencies listed under __Installation__.
 
 ####Roundup
 
